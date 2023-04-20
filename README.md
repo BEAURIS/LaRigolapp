@@ -31,7 +31,7 @@ La page de profil affiche les informations de l'utilisateur, telles que son nom,
 ## Installation et configuration
 1. Cloner le dépôt git
 
-'''git clone https://github.com/username/LaRigolApp.git'''
+```git clone https://github.com/username/LaRigolApp.git```
 
 2. Ouvrir le projet dans l'éditeur de code
 cd LaRigolApp
@@ -39,11 +39,11 @@ code .
 
 3. Installer les dépendances
 
-'''flutter pub get'''
+```flutter pub get```
 
 4. Lancer l'application sur un émulateur ou un appareil connecté
 
-'''flutter run'''
+```flutter run```
 
 
 ## Contributions
