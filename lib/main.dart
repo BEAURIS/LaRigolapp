@@ -82,7 +82,7 @@ class _MainPageState extends State<MainPage> {
             label: 'Accueil',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.change_circle),
             label: 'Fil d\'actualité',
           ),
           BottomNavigationBarItem(
