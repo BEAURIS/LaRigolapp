@@ -28,4 +28,6 @@ class JokeProvider with ChangeNotifier {
     joke.isFavorite = false;
     notifyListeners();
   }
+
+  void setJokeType(String selectedType) {}
 }
