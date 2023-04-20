@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields, unnecessary_cast
+
 import 'package:flutter/material.dart';
 import 'Joke.dart';
 import 'api_service.dart';

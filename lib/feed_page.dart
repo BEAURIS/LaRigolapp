@@ -1,9 +1,13 @@
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'joke_provider.dart';
 import 'Joke.dart';
 
 class FeedPage extends StatefulWidget {
+  const FeedPage({super.key});
+
   @override
   _FeedPageState createState() => _FeedPageState();
 }

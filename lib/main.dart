@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, library_private_types_in_public_api
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -18,6 +20,7 @@ Future<void> main() async {
   final notificationManager = NotificationManager();
   await notificationManager.initNotifications();
   await notificationManager.scheduleDailyNotification();
+  // ignore: prefer_const_constructors
   runApp(MyApp());
 }
 
@@ -35,8 +38,8 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/home',
         routes: {
-          '/home': (context) => MainPage(),
-          '/feed': (context) => FeedPage(),
+          '/home': (context) => const MainPage(),
+          '/feed': (context) => const FeedPage(),
           '/favorites': (context) => FavoritesPage(),
         },
       ),
@@ -45,6 +48,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -52,8 +57,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final _pages = [
-    HomePage(),
-    FeedPage(),
+    const HomePage(),
+    const FeedPage(),
     FavoritesPage(),
   ];
 
