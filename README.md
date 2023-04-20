@@ -30,24 +30,20 @@ La page de profil affiche les informations de l'utilisateur, telles que son nom,
 
 ## Installation et configuration
 1. Cloner le dépôt git
-git clone https://github.com/username/LaRigolApp.git
+
+"git clone https://github.com/username/LaRigolApp.git"
 
 2. Ouvrir le projet dans l'éditeur de code
 cd LaRigolApp
 code .
 
 3. Installer les dépendances
-flutter pub get
 
-4. Configurer Firebase pour l'authentification
-- Créer un projet Firebase sur la console Firebase
-- Ajouter une application Android ou iOS à votre projet
-- Télécharger le fichier google-services.json (pour Android) ou GoogleService-Info.plist (pour iOS) et ajoutez-le à votre projet Flutter
-- Activer l'authentification par e-mail et par téléphone dans la console Firebase
-- Ajouter les fichiers `auth_service.dart` et `auth_provider.dart` au répertoire `lib`
+"flutter pub get"
 
-5. Lancer l'application sur un émulateur ou un appareil connecté
-flutter run
+4. Lancer l'application sur un émulateur ou un appareil connecté
+
+"flutter run"
 
 
 ## Contributions
