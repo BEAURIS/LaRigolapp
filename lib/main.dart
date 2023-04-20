@@ -3,13 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'joke_provider.dart';
-import 'login_page.dart';
 import 'home.dart';
 import 'feed_page.dart';
 import 'favorites_page.dart';
-import 'profile_page.dart';
 import 'package:timezone/data/latest.dart' as tz;
-import 'package:timezone/timezone.dart' as tz;
 import 'notifications_manager.dart';
 
 
@@ -25,6 +22,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -34,10 +33,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        initialRoute: '/login',
+        initialRoute: '/home',
         routes: {
-          '/login': (context) => LoginPage(),
-          '/main': (context) => MainPage(),
+          '/home': (context) => MainPage(),
+          '/feed': (context) => FeedPage(),
+          '/favorites': (context) => FavoritesPage(),
         },
       ),
     );
@@ -55,7 +55,6 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     FeedPage(),
     FavoritesPage(),
-    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -68,11 +67,11 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('LA RIGOL APP'),
+        title: const Text('LA RIGOL APP'),
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Accueil',
@@ -84,10 +83,6 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favoris',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
           ),
         ],
         currentIndex: _selectedIndex,
