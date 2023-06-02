@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_final_fields, unnecessary_cast
-
 import 'package:flutter/material.dart';
 import 'Joke.dart';
 import 'api_service.dart';
@@ -11,9 +9,9 @@ class JokeProvider with ChangeNotifier {
   List<Joke> get jokes => _jokes;
   List<Joke> get favorites => _favorites;
 
-  void fetchJokes() async {
+  Future<void> fetchJokes({required int offset}) async {
     for (int i = 0; i < 20; i++) {
-      Joke joke = (await ApiService.fetchJoke()) as Joke;
+      Joke joke = await ApiService.fetchJoke(i);
       _jokes.add(joke);
       notifyListeners();
     }
@@ -32,4 +30,15 @@ class JokeProvider with ChangeNotifier {
   }
 
   void setJokeType(String selectedType) {}
+
+  Future<void> fetchJoke({int offset = 0}) async {
+    List<Joke> fetchedJokes = [];
+    for (int i = offset; i < offset + 20; i++) {
+      Joke joke = await ApiService.fetchJoke(i);
+      fetchedJokes.add(joke);
+    }
+    _jokes = fetchedJokes;
+    notifyListeners();
+  }
+
 }
